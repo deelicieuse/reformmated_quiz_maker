@@ -80,14 +80,14 @@ class QuizPlayer:
         self.questions_label.pack(pady=10)
         self.answer_buttons = {}
         for key in "abcd":
-            btn = tk.Button(
+            button = tk.Button(
             self.quiz_frame,
             width=40,
             font=("Courier", 12),
             command=lambda o=key: self._answer(o)
             )
-            btn.pack(pady=3)
-            self.answer_buttons[key] = btn
+            button.pack(pady=3)
+            self.answer_buttons[key] = button
 
     def switch_frame(self, frame):
         for child in self.root.winfo_children():
@@ -119,8 +119,8 @@ class QuizPlayer:
         self.current_index = idx
         self.current_question = self.questions[idx]
         self.questions_label.config(text=self.current_question["question"])
-        for key, btn in self.answer_buttons.items():
-            btn.config(text=f"{key.upper()}: {self.current_question['options'][key]['text']}")
+        for key, button in self.answer_buttons.items():
+            button.config(text=f"{key.upper()}: {self.current_question['options'][key]['text']}")
 
         self.update_header()
 
