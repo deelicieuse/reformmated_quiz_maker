@@ -1,0 +1,1 @@
+from class_quiz_player import QuizPlayer

@@ -3,8 +3,6 @@ from tkinter import filedialog, messagebox
 import json
 import random
 
-
-
 class QuizPlayer:
     def __init__(self):
         self.root = tk.Tk()
