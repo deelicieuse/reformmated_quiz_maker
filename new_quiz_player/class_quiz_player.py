@@ -19,20 +19,20 @@ class QuizPlayer:
 
     def apply_theme(self):
         self.root.config(bg=self.window_bg)
-        for w in self.root. winfo_children():
-            self._recolor(w)
+        for widget in self.root. winfo_children():
+            self._recolor(widget)
 
-    def _recolor(self, w):
-        w.config(bg=self.window_bg)
-        if isinstance(w, (tk.Label, tk.Button)):
-            w.config(fg=self.text_fg)
-        if isinstance(w, tk.Button):
-            w.config(
+    def _recolor(self, widget):
+        widget.config(bg=self.window_bg)
+        if isinstance(widget, (tk.Label, tk.Button)):
+            widget.config(fg=self.text_fg)
+        if isinstance(widget, tk.Button):
+            widget.config(
                 activebackground=self.text_fg,
                 activeforeground=self.window_bg
             )
-        if hasattr(w, "winfo_children"):
-            for child in w.winfo_children():
+        if hasattr(widget, "winfo_children"):
+            for child in widget.winfo_children():
                 self._recolor(child)
 
     def build_ui(self):
