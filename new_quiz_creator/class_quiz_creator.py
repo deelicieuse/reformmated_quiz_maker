@@ -250,5 +250,5 @@ class QuizCreatorApp:
             try:
                 question_count = len(self.questions_list)
                 self.questions_count_label.config(text=f"Questions in current quiz: {len(self.questions_list)}")
-            except Exception as e:
-                print(f"Error in update_questions_count: {e}")
+            except Exception as error:
+                print(f"Error in update_questions_count: {error}")
