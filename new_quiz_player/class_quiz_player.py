@@ -113,11 +113,11 @@ class QuizPlayer:
             self.finish_quiz()
             return
         while True:
-            idx = random.randrange(len(self.questions))
-            if idx not in self.asked_indices:
+            index = random.randrange(len(self.questions))
+            if index not in self.asked_indices:
                 break
-        self.current_index = idx
-        self.current_question = self.questions[idx]
+        self.current_index = index
+        self.current_question = self.questions[index]
         self.questions_label.config(text=self.current_question["question"])
         for key, button in self.answer_buttons.items():
             button.config(text=f"{key.upper()}: {self.current_question['options'][key]['text']}")
